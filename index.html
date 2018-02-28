@@ -10,7 +10,7 @@
   </head>
 
 	<body>
-		<img src="tjejerkodar.jpg" width="190" height="250" />
+		<img src="tjejerkodar.jpg">
 		<h1>Hjälp mig att välja!</h1>
 	  <div class="inputSection">
 				<div class="inputs">
@@ -18,9 +18,20 @@
 			  </div>
 			 <button class="addOption">Add</button>
 		</div>
+		<div class="resultSection"></div>
 		<button>Go!</button>
-	</div>
 
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>
+			$(function() {
+				$('.resultSection').hide()
+
+				var add_option = function() {
+					$('.inputs').append('<input></input>')
+				}
+
+				$('.addOption').click(add_option)
+			})
+		</script>
 	</body>
-
 </html>
