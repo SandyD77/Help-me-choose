@@ -5,7 +5,12 @@ body {
   align-items: center;
   margin-top: 100px;
   background-color: aqua;
+}
 
+.rotate {
+  -webkit-transform: rotatez(-30deg);
+  -ms-transform: rotatez(-30deg);
+  transform: rotateZ(-30deg);
 }
 
 h1{
@@ -15,7 +20,17 @@ h1{
   letter-spacing: 2px;
   margin-top: 30px;
   margin-bottom: 10px;
+  color: #F200F2;
+}
 
+h2{
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #F200F2;
 }
 
 .inputSection{
@@ -35,5 +50,19 @@ input{
 
 .addOption{
   margin-top: 10px;
-  color: blue;
+  color: #F200F2;
+}
+
+.submit{
+  color: #F200F2;
+}
+
+.resultSection{
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-style: oblique;
+  color: #F200F2
 }
