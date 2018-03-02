@@ -4,20 +4,20 @@
 <html>
 	<head>
 		<meta charset=utf-8>
-    <title>What to choose?</title>
+    <title>Kvällens rätt?</title>
 		<link href="./main.css" rel="stylesheet" type="text/css">
 
   </head>
 
 	<body>
 		<div class="rotate">
-			<img src="tjejerkodar.jpg">
+				<img src="våfflor.jpg">
 		</div>
-		<h1>Hjälp mig att välja!</h1>
-		<h2>Vinnaren är:</h2>
+		<h1>Vad ska vi äta ikväll?</h1>
+		<h2>Och ikväll ska vi äta...:</h2>
 	  <div class="inputSection">
 				<div class="inputs">
-			     <input placeholder="Här skriver du in vad du vill välja mellan!"></input>
+			     <input placeholder="Skriv in en maträtt här!"></input>
 			  </div>
 			 <button class="addOption">Add</button>
 		</div>
@@ -45,12 +45,25 @@
 					$('input').each(function() {
 						options.push($(this).val())
 					})
+					//floor gör så att det blir heltal och sedan random för att
+					//slumpmässigt välja ett tal. 
 					var winner = options[Math.floor(Math.random() * options.length)]
 					console.log(winner)
 					$('.resultSection').text(winner)
 				}
 				$('.submit').click(submit)
-			})
+				})
+				//Gör så att när man trycker enter så hoppar den till nästa input
+				var add_option = function() {
+					$('.inputs').append('<input></input>')
+					$("input:text:visible:last").focus()
+					}
+					$('.addOption').click(add_option)
+					$('.inputSection').keydown(function(e)    {
+					 if (e.keyCode == 13)    {
+							 add_option()
+					 }
+			 })
 		</script>
 	</body>
 </html>
